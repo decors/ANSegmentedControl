@@ -46,6 +46,9 @@
 @interface ANSegmentedControl (Private)
 - (void)drawBackgroud:(NSRect)rect;
 - (void)drawKnob:(NSRect)rect;
+- (void)animateTo:(int)x;
+- (void)setPosition:(NSNumber *)x;
+- (void)offsetLocationByX:(float)x;
 @end
 
 @implementation ANSegmentedControl
@@ -225,7 +228,7 @@
 }
 
 
-- (void)setPosition:(NSNumber*)x
+- (void)setPosition:(NSNumber *)x
 {
     location.x = [x intValue];
     [self display];
@@ -293,10 +296,9 @@
                         
                         localLastDragLocation = newDragLocation;
                         [self autoscroll:localEvent];
-                    }                    
+                    }             
                     break;
                 case NSLeftMouseUp:
-                    NSLog(@"mouseup");
                     loop = NO;
                     
                     int newSegment;

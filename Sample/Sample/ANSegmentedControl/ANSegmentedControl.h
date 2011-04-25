@@ -14,9 +14,6 @@
     NSPoint location;
 }
 
-- (void)drawBackgroud:(NSRect)rect;
-- (void)drawKnob:(NSRect)rect;
-
 -(void)setSelectedSegment:(NSInteger)newSegment animate:(bool)animate;
 
 @end
