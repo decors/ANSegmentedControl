@@ -13,6 +13,13 @@
 		CBE8AF4E13655C3C0056207D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF4C13655C3C0056207D /* Credits.rtf */; };
 		CBE8AF5113655C3C0056207D /* SampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF5013655C3C0056207D /* SampleAppDelegate.m */; };
 		CBE8AF5413655C3C0056207D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF5213655C3C0056207D /* MainMenu.xib */; };
+		CBE8AF6B13655CA70056207D /* ANSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF6413655CA70056207D /* ANSegmentedCell.m */; };
+		CBE8AF6C13655CA70056207D /* ANSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF6613655CA70056207D /* ANSegmentedControl.m */; };
+		CBE8AF6D13655CA70056207D /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF6813655CA70056207D /* NSBezierPath+MCAdditions.m */; };
+		CBE8AF6E13655CA70056207D /* NSShadow+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF6A13655CA70056207D /* NSShadow+MCAdditions.m */; };
+		CBE8AF7413655CAC0056207D /* FilterNone.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF7113655CAC0056207D /* FilterNone.png */; };
+		CBE8AF7513655CAC0056207D /* FilterStarred.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF7213655CAC0056207D /* FilterStarred.png */; };
+		CBE8AF7613655CAC0056207D /* FilterUnread.png in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF7313655CAC0056207D /* FilterUnread.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +36,17 @@
 		CBE8AF4F13655C3C0056207D /* SampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleAppDelegate.h; sourceTree = "<group>"; };
 		CBE8AF5013655C3C0056207D /* SampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleAppDelegate.m; sourceTree = "<group>"; };
 		CBE8AF5313655C3C0056207D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CBE8AF6313655CA70056207D /* ANSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSegmentedCell.h; sourceTree = "<group>"; };
+		CBE8AF6413655CA70056207D /* ANSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSegmentedCell.m; sourceTree = "<group>"; };
+		CBE8AF6513655CA70056207D /* ANSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANSegmentedControl.h; sourceTree = "<group>"; };
+		CBE8AF6613655CA70056207D /* ANSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANSegmentedControl.m; sourceTree = "<group>"; };
+		CBE8AF6713655CA70056207D /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
+		CBE8AF6813655CA70056207D /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
+		CBE8AF6913655CA70056207D /* NSShadow+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSShadow+MCAdditions.h"; sourceTree = "<group>"; };
+		CBE8AF6A13655CA70056207D /* NSShadow+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSShadow+MCAdditions.m"; sourceTree = "<group>"; };
+		CBE8AF7113655CAC0056207D /* FilterNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterNone.png; sourceTree = "<group>"; };
+		CBE8AF7213655CAC0056207D /* FilterStarred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterStarred.png; sourceTree = "<group>"; };
+		CBE8AF7313655CAC0056207D /* FilterUnread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FilterUnread.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,8 @@
 		CBE8AF4313655C3C0056207D /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				CBE8AF7013655CAC0056207D /* Resources */,
+				CBE8AF6213655CA70056207D /* ANSegmentedControl */,
 				CBE8AF4F13655C3C0056207D /* SampleAppDelegate.h */,
 				CBE8AF5013655C3C0056207D /* SampleAppDelegate.m */,
 				CBE8AF5213655C3C0056207D /* MainMenu.xib */,
@@ -101,6 +121,32 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		CBE8AF6213655CA70056207D /* ANSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8AF6313655CA70056207D /* ANSegmentedCell.h */,
+				CBE8AF6413655CA70056207D /* ANSegmentedCell.m */,
+				CBE8AF6513655CA70056207D /* ANSegmentedControl.h */,
+				CBE8AF6613655CA70056207D /* ANSegmentedControl.m */,
+				CBE8AF6713655CA70056207D /* NSBezierPath+MCAdditions.h */,
+				CBE8AF6813655CA70056207D /* NSBezierPath+MCAdditions.m */,
+				CBE8AF6913655CA70056207D /* NSShadow+MCAdditions.h */,
+				CBE8AF6A13655CA70056207D /* NSShadow+MCAdditions.m */,
+			);
+			path = ANSegmentedControl;
+			sourceTree = "<group>";
+		};
+		CBE8AF7013655CAC0056207D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CBE8AF7113655CAC0056207D /* FilterNone.png */,
+				CBE8AF7213655CAC0056207D /* FilterStarred.png */,
+				CBE8AF7313655CAC0056207D /* FilterUnread.png */,
+			);
+			name = Resources;
+			path = Sample/Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -152,6 +198,9 @@
 				CBE8AF4813655C3C0056207D /* InfoPlist.strings in Resources */,
 				CBE8AF4E13655C3C0056207D /* Credits.rtf in Resources */,
 				CBE8AF5413655C3C0056207D /* MainMenu.xib in Resources */,
+				CBE8AF7413655CAC0056207D /* FilterNone.png in Resources */,
+				CBE8AF7513655CAC0056207D /* FilterStarred.png in Resources */,
+				CBE8AF7613655CAC0056207D /* FilterUnread.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +213,10 @@
 			files = (
 				CBE8AF4B13655C3C0056207D /* main.m in Sources */,
 				CBE8AF5113655C3C0056207D /* SampleAppDelegate.m in Sources */,
+				CBE8AF6B13655CA70056207D /* ANSegmentedCell.m in Sources */,
+				CBE8AF6C13655CA70056207D /* ANSegmentedControl.m in Sources */,
+				CBE8AF6D13655CA70056207D /* NSBezierPath+MCAdditions.m in Sources */,
+				CBE8AF6E13655CA70056207D /* NSShadow+MCAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +331,7 @@
 				CBE8AF5913655C3C0056207D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

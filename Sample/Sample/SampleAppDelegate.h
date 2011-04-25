@@ -7,12 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ANSegmentedControl.h"
 
 @interface SampleAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
+    ANSegmentedControl *segment;
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet ANSegmentedControl *segment;
+
+- (IBAction)clickButton1:(id)sender;
+- (IBAction)clickButton2:(id)sender;
+- (IBAction)clickButton3:(id)sender;
 
 @end

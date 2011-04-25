@@ -11,10 +11,26 @@
 @implementation SampleAppDelegate
 
 @synthesize window;
+@synthesize segment;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+}
+
+- (IBAction)clickButton1:(id)sender 
+{
+    [segment setSelectedSegment:0];
+}
+
+- (IBAction)clickButton2:(id)sender 
+{
+    [segment setSelectedSegment:1];
+}
+
+- (IBAction)clickButton3:(id)sender 
+{
+    [segment setSelectedSegment:2];
 }
 
 @end
