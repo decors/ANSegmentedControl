@@ -76,6 +76,8 @@
 
 - (void)awakeFromNib
 {
+    [self setBoundsSize:NSMakeSize([self bounds].size.width, 25)];
+    [self setFrameSize:NSMakeSize([self frame].size.width, 25)];
     location.x = [self frame].size.width / [self segmentCount] * [self selectedSegment];
     [[self cell] setTrackingMode:NSSegmentSwitchTrackingSelectOne];
 }
@@ -103,7 +105,7 @@
     NSRect rect = NSMakeRect(frame.origin.x, 
                              frame.origin.y + 1,
                              [[self imageForSegment:segment] size].width, 
-                             [[self imageForSegment:segment] size].height);
+                             [[self imageForSegment:segment] size].height + 1);
     [[self imageForSegment:segment] drawInRect:rect
                                       fromRect:NSZeroRect
                                      operation:NSCompositeSourceOver
@@ -127,7 +129,7 @@
     if ([[self window] isKeyWindow]) {
         gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:.75 alpha:1.0]
                                                  endingColor:[NSColor colorWithCalibratedWhite:.6 alpha:1.0]];
-        frameColor = [[NSColor colorWithCalibratedWhite:.52 alpha:1.0] retain];
+        frameColor = [[NSColor colorWithCalibratedWhite:.37 alpha:1.0] retain];
     } else {
         gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:.8 alpha:1.0]
                                                  endingColor:[NSColor colorWithCalibratedWhite:.77 alpha:1.0]];
@@ -174,7 +176,7 @@
         gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:.68 alpha:1.0]
                                                  endingColor:[NSColor colorWithCalibratedWhite:.91 alpha:1.0]];   
         imageFraction = 1.0;
-        frameColor = [[NSColor colorWithCalibratedWhite:.52 alpha:1.0] retain];
+        frameColor = [[NSColor colorWithCalibratedWhite:.37 alpha:1.0] retain];
     } else {
         gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:.76 alpha:1.0]
                                                  endingColor:[NSColor colorWithCalibratedWhite:.90 alpha:1.0]];   
@@ -195,11 +197,10 @@
     
     int newSegment = (int)round(location.x / width);
     NSPoint pt = location;
-    pt.y += 1;
     NSRect knobRect = NSMakeRect(pt.x, 
-                                 pt.y,
+                                 pt.y + 1,
                                  [[self imageForSegment:newSegment] size].width, 
-                                 [[self imageForSegment:newSegment] size].height);
+                                 [[self imageForSegment:newSegment] size].height + 1);
     [[self imageForSegment:newSegment] drawInRect:knobRect
                                          fromRect:NSZeroRect
                                         operation:NSCompositeSourceOver
@@ -329,5 +330,5 @@
 {
     return YES;
 }
-    
+
 @end

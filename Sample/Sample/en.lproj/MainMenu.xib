@@ -1336,7 +1336,7 @@
 						<object class="NSSegmentedControl" id="914447365">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{113, 91}, {120, 24}}</string>
+							<string key="NSFrame">{{18, 165}, {120, 24}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="962756058"/>
@@ -1386,10 +1386,10 @@
 						<object class="NSButton" id="962756058">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{59, 42}, {71, 25}}</string>
+							<string key="NSFrame">{{255, 164}, {71, 25}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="40278221"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="304541620">
 								<int key="NSCellFlags">-2080244224</int>
@@ -1412,9 +1412,10 @@
 						<object class="NSButton" id="40278221">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{138, 42}, {71, 25}}</string>
+							<string key="NSFrame">{{255, 134}, {71, 25}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="520474883">
 								<int key="NSCellFlags">-2080244224</int>
@@ -1433,9 +1434,10 @@
 						<object class="NSButton" id="355881925">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{217, 42}, {71, 25}}</string>
+							<string key="NSFrame">{{255, 104}, {71, 25}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="968837869">
 								<int key="NSCellFlags">-2080244224</int>
@@ -3835,7 +3837,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">545</int>
+			<int key="maxID">546</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
