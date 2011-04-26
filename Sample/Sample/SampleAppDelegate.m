@@ -7,6 +7,7 @@
 //
 
 #import "SampleAppDelegate.h"
+#import "INAppStoreWindow.h"
 
 @implementation SampleAppDelegate
 
@@ -15,7 +16,9 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    INAppStoreWindow *aWindow = (INAppStoreWindow *)self.window;
+    aWindow.titleBarHeight = 40.0;
+    [aWindow.titleBarView addSubview:titleBar];
 }
 
 - (IBAction)clickButton1:(id)sender 

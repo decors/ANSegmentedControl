@@ -12,6 +12,7 @@
 @interface SampleAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     NSWindow *window;
+    IBOutlet NSView *titleBar;
     ANSegmentedControl *segment;
 }
 

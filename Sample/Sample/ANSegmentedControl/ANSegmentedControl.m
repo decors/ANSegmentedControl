@@ -84,7 +84,7 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {    
-	NSRect rect = dirtyRect;
+	NSRect rect = [self bounds];
 	rect.size.height -= 1;
     
     [self drawBackgroud:rect];
