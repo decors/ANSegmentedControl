@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91B3D8F13673DA600AC21B2 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B91B3D8E13673DA600AC21B2 /* INAppStoreWindow.m */; };
 		CBE8AF3E13655C3C0056207D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE8AF3D13655C3C0056207D /* Cocoa.framework */; };
 		CBE8AF4813655C3C0056207D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CBE8AF4613655C3C0056207D /* InfoPlist.strings */; };
 		CBE8AF4B13655C3C0056207D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CBE8AF4A13655C3C0056207D /* main.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B91B3D8D13673DA600AC21B2 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
+		B91B3D8E13673DA600AC21B2 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		CBE8AF3913655C3C0056207D /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBE8AF3D13655C3C0056207D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CBE8AF4013655C3C0056207D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -61,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B91B3D8C13673DA600AC21B2 /* INAppStoreWindow */ = {
+			isa = PBXGroup;
+			children = (
+				B91B3D8D13673DA600AC21B2 /* INAppStoreWindow.h */,
+				B91B3D8E13673DA600AC21B2 /* INAppStoreWindow.m */,
+			);
+			path = INAppStoreWindow;
+			sourceTree = "<group>";
+		};
 		CBE8AF2E13655C3B0056207D = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		CBE8AF4313655C3C0056207D /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				B91B3D8C13673DA600AC21B2 /* INAppStoreWindow */,
 				CBE8AF7013655CAC0056207D /* Resources */,
 				CBE8AF6213655CA70056207D /* ANSegmentedControl */,
 				CBE8AF4F13655C3C0056207D /* SampleAppDelegate.h */,
@@ -217,6 +230,7 @@
 				CBE8AF6C13655CA70056207D /* ANSegmentedControl.m in Sources */,
 				CBE8AF6D13655CA70056207D /* NSBezierPath+MCAdditions.m in Sources */,
 				CBE8AF6E13655CA70056207D /* NSShadow+MCAdditions.m in Sources */,
+				B91B3D8F13673DA600AC21B2 /* INAppStoreWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
