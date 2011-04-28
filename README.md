@@ -1,7 +1,7 @@
 ANSegmentedControl
 ====================
 
-Reader for Mac like NSSegmentedControl
+NSSegmentedControl subclass
 
 ![ANSegmentedControl](http://i51.tinypic.com/apcwlf.png)
 
