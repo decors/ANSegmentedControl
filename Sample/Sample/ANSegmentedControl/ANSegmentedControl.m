@@ -52,6 +52,7 @@
 - (void)animateTo:(int)x;
 - (void)setPosition:(NSNumber *)x;
 - (void)offsetLocationByX:(float)x;
+- (void)drawCenteredImage:(NSImage*)image inFrame:(NSRect)frame imageFraction:(float)imageFraction;
 @end
 
 @implementation ANSegmentedControl
@@ -214,7 +215,9 @@
     NSImage *image = [self imageForSegment:newSegment];
     [self drawCenteredImage:image inFrame:knobRect imageFraction:imageFraction];
 
-   
+#if ! __has_feature(objc_arc)
+    [gradient release];
+#endif
 }
 
 - (void)animateTo:(int)x
@@ -233,6 +236,9 @@
     
     [a setAnimationBlockingMode:NSAnimationBlocking];
     [a startAnimation];
+#if ! __has_feature(objc_arc)
+    [a release];
+#endif
 }
 
 
