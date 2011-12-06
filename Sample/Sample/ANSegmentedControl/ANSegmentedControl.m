@@ -85,6 +85,20 @@
     [[self cell] setTrackingMode:NSSegmentSwitchTrackingSelectOne];
 }
 
+-(void)drawCenteredImage:(NSImage*)image inFrame:(NSRect)frame imageFraction:(float)imageFraction
+{
+    CGSize imageSize = [image size];
+    CGRect rect= NSMakeRect(frame.origin.x + (frame.size.width-imageSize.width)/2.0, 
+               frame.origin.y + (frame.size.height-imageSize.height)/2.0,
+               imageSize.width, 
+               imageSize.height ); 
+    [image drawInRect:rect
+                                      fromRect:NSZeroRect
+                                     operation:NSCompositeSourceOver
+                                      fraction:imageFraction
+                                respectFlipped:YES
+                                         hints:nil];
+}
 - (void)drawRect:(NSRect)dirtyRect
 {    
 	NSRect rect = [self bounds];
@@ -104,17 +118,9 @@
         imageFraction = .2;
     }
     
+    NSImage *image = [self imageForSegment:segment];
     [[NSGraphicsContext currentContext] setImageInterpolation: NSImageInterpolationHigh];
-    NSRect rect = NSMakeRect(frame.origin.x, 
-                             frame.origin.y + 1,
-                             [[self imageForSegment:segment] size].width, 
-                             [[self imageForSegment:segment] size].height + 1);
-    [[self imageForSegment:segment] drawInRect:rect
-                                      fromRect:NSZeroRect
-                                     operation:NSCompositeSourceOver
-                                      fraction:imageFraction
-                                respectFlipped:YES
-                                         hints:nil];
+    [self drawCenteredImage:image inFrame:frame imageFraction:imageFraction];
 }
 
 - (void)drawBackgroud:(NSRect)rect
@@ -167,8 +173,10 @@
                  withView:self];
         segmentRect.origin.x += segmentWidth;
     }
+#if ! __has_feature(objc_arc)
     [gradient release];
     [dropShadow release];
+#endif
 }
 
 - (void)drawKnob:(NSRect)rect
@@ -192,7 +200,8 @@
     
     CGFloat width = rect.size.width / [self segmentCount];
     CGFloat height = rect.size.height;
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:NSMakeRect(location.x, rect.origin.y, width, height)
+    NSRect knobRect=NSMakeRect(location.x, rect.origin.y, width, height);
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:  knobRect
                                                          xRadius:radius 
                                                          yRadius:radius];
     // 塗り
@@ -202,18 +211,10 @@
 	[path strokeInside];
     
     int newSegment = (int)round(location.x / width);
-    NSPoint pt = location;
-    NSRect knobRect = NSMakeRect(pt.x, 
-                                 pt.y + 1,
-                                 [[self imageForSegment:newSegment] size].width, 
-                                 [[self imageForSegment:newSegment] size].height + 1);
-    [[self imageForSegment:newSegment] drawInRect:knobRect
-                                         fromRect:NSZeroRect
-                                        operation:NSCompositeSourceOver
-                                         fraction:imageFraction
-                                   respectFlipped:YES
-                                            hints:nil];
-    [gradient release];
+    NSImage *image = [self imageForSegment:newSegment];
+    [self drawCenteredImage:image inFrame:knobRect imageFraction:imageFraction];
+
+   
 }
 
 - (void)animateTo:(int)x
@@ -232,7 +233,6 @@
     
     [a setAnimationBlockingMode:NSAnimationBlocking];
     [a startAnimation];
-    [a release];
 }
 
 
