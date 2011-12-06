@@ -53,15 +53,27 @@
 - (void)setPosition:(NSNumber *)x;
 - (void)offsetLocationByX:(float)x;
 - (void)drawCenteredImage:(NSImage*)image inFrame:(NSRect)frame imageFraction:(float)imageFraction;
+- (void)setDefaultDurations;
 @end
 
 @implementation ANSegmentedControl
+@synthesize fastAnimationDuration=_fastAnimationDuration;
+@synthesize slowAnimationDuration=_slowAnimationDuration;
+
 
 + (Class)cellClass
 {
 	return [ANSegmentedCell class];
 }
-
+- (id) initWithFrame:(NSRect)frameRect
+{
+    self = [super initWithFrame:frameRect];
+    if( self )
+    {
+        [self setDefaultDurations];
+    }
+    return self;
+}
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
 	if (![aDecoder isKindOfClass:[NSKeyedUnarchiver class]])
@@ -74,6 +86,8 @@
 	[unarchiver setClass:newClass forClassName:NSStringFromClass(oldClass)];
 	self = [super initWithCoder:aDecoder];
 	[unarchiver setClass:oldClass forClassName:NSStringFromClass(oldClass)];
+    
+    [self setDefaultDurations]; 
 	
 	return self;
 }
@@ -227,10 +241,10 @@
     ANKnobAnimation *a = [[ANKnobAnimation alloc] initWithStart:location.x end:x];
     [a setDelegate:self];
     if (location.x == 0 || location.x == maxX){
-        [a setDuration:0.20];
+        [a setDuration:_fastAnimationDuration];
         [a setAnimationCurve:NSAnimationEaseInOut];
     } else {
-        [a setDuration:0.35 * ((fabs(location.x - x)) / maxX)];
+        [a setDuration:_slowAnimationDuration * ((fabs(location.x - x)) / maxX)];
         [a setAnimationCurve:NSAnimationLinear];
     }
     
@@ -342,6 +356,12 @@
 - (BOOL)acceptsFirstResponder
 {
     return YES;
+}
+
+- (void)setDefaultDurations
+{
+    _fastAnimationDuration = 0.20;
+    _slowAnimationDuration = 0.35;
 }
 
 @end
